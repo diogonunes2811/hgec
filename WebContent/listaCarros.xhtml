@@ -2,8 +2,105 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
-	<ui:composition template="">
+	<ui:composition template="/recursos/template/template.xhtml">
+	<ui:define name="tituloSistema"><a href="index.jsf"><span>Hospital Geral de </span>Curitiba</a></ui:define>
+	<ui:define name="tituloPrincipal">Lista de Carros</ui:define>
+	<ui:define name="tituloSecundario">Carros cadastrados</ui:define>
+	<ui:define name="botoesAcao"></ui:define>
+	<ui:define name="conteudo">
+
+		<p:dataTable value="#{carroBean.carros}" var="carro">
+
+			<p:column headerText="Placa">
+				<h:outputText value="#{carro.placa}" />
+			</p:column>
+			
+			<p:column headerText="Motorista">
+				<h:outputText value="#{carro.motorista}" />
+			</p:column>
+			
+			<p:column headerText="Categoria CNH">
+				<h:outputText value="#{carro.categoriaCnh}" />
+			</p:column>
+			
+			<p:column headerText="Validade CNH">
+				<h:outputText value="#{carro.validadeCnh}" />
+			</p:column>
+			
+			<p:column headerText="Telefone">
+				<h:outputText value="#{carro.telefone}" />
+			</p:column>
+			
+			<p:column headerText="Modelo Veiculo">
+				<h:outputText value="#{carro.modeloVeiculo}" />
+			</p:column>
+			
+			<p:column headerText="Ações">
+				<p:commandButton update="@form" icon="fa fa-trash"
+					action="#{carroBean.excluir(carro)}" immediate="true" />
+				<p:commandButton update="formEdicao" icon="fa fa-pencil"
+					immediate="true" oncomplete="PF('janelaEditar').show();"
+					action="#{carroBean.selecionarCarro(carro)}" />
+			</p:column>
+
+		</p:dataTable>
+
+	</ui:define>
+
+	<ui:define name="janelaModal">
+
+		<h:form id="formEdicao">
+
+			<p:dialog id="editar" widgetVar="janelaEditar"
+				header="Editar Pessoa" modal="true">
+
+				<h:panelGrid columns="3">
+
+					<p:outputLabel for="n0" value="Id:" />
+					<h:outputText id="n0" value="#{pessoaBean.pessoa.id}" />
+					<p:message for="n0" />
+
+					<p:outputLabel for="n1" value="Placa:" />
+					<p:inputText id="n1" value="#{carroBean.carro.placa}" />
+					<p:message for="n1" />
+					
+					<p:outputLabel for="n2" value="Motorista:" />
+					<p:inputText id="n2" value="#{carroBean.carro.motorista}" />
+					<p:message for="n2" />
+					
+					<p:outputLabel for="n3" value="Categoria CNH:" />
+					<p:inputText id="n3" value="#{carroBean.carro.categoriaCnh}" />
+					<p:message for="n3" />
+					
+					<p:outputLabel for="n4" value="Validade CNH:" />
+					<p:inputText id="n4" value="#{carroBean.carro.validadeCnh}" />
+					<p:message for="n4" />
+					
+					<p:outputLabel for="n5" value="Telefone:" />
+					<p:inputText id="n5" value="#{carroBean.carro.telefone}" />
+					<p:message for="n5" />
+					
+					<p:outputLabel for="n6" value="Modelo Veiculo" />
+					<p:inputText id="n6" value="#{carroBean.carro.modeloVeiculo}" />
+					<p:message for="n6" />
+					
+				</h:panelGrid>
+
+				<f:facet name="footer">
+					<p:commandButton value="salvar" update="form"
+						action="#{carroBean.editar()}"
+						oncomplete="PF('janelaEditar').hide();" />
+				</f:facet>
+
+			</p:dialog>
+
+
+		</h:form>
+
+	</ui:define>
+		
 	</ui:composition>
 </html>
