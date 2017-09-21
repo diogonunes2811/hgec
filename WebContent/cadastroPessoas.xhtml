@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/recursos/template/template.xhtml">
+		<ui:define name="tituloSistema"><a href="index.jsf"><span>Hospital Geral de </span>Curitiba</a></ui:define>
+		<ui:define name="tituloPrincipal">Cadastro de Pessoas</ui:define>
+		<ui:define name="tituloSecundario">Informe os dados completos para o cadastro</ui:define>
+		<ui:define name="botoesAcao">
+			<p:commandButton value="Cadastrar" action="#{pessoaBean.cadastrar()}"
+				update="@form" icon="fa fa-lock" />
+		</ui:define>
+		
+		<ui:define name="conteudo">
+			<h:panelGrid columns="3">
+	
+				<p:outputLabel for="n1" value="Nome Completo:" />
+				<p:inputText id="n1" value="#{pessoaBean.pessoa.nome}" />
+				<p:message for="n1" />
+				
+				<p:outputLabel for="n2" value="Data de Nascimento:" />
+				<p:calendar mask="99/99/9999" id="n2"
+					value="#{pessoaBean.pessoa.dataNascimento}" />
+				<p:message for="n2" />
+				
+				<p:outputLabel for="n3" value="Nome do Pai:" />
+				<p:inputText id="n3" value="#{pessoaBean.pessoa.nomeDoPai}" />
+				<p:message for="n3" />
+				
+				<p:outputLabel for="n4" value="Nome da Mãe:" />
+				<p:inputText id="n4" value="#{pessoaBean.pessoa.nomeDaMae}" />
+				<p:message for="n4" />
+				
+				<p:outputLabel for="n5" value="Cpf:" />
+				<p:inputMask id="n5" mask="999.999.999-99" value="#{pessoaBean.pessoa.cpf}" />
+				<p:message for="n5" />
+				
+				<p:outputLabel for="n6" value="Sexo:" />
+				<p:selectOneRadio id="n6" value="#{pessoaBean.pessoa.sexo}">
+					<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+					<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+				</p:selectOneRadio>
+				<p:message for="n6" />
+				
+				<p:outputLabel for="n7" value="Email:" />
+				<p:inputText id="n7" value="#{pessoaBean.pessoa.email}" />
+				<p:message for="n7" />
+				
+				<p:outputLabel for="n8" value="Telefone:" />
+				<p:inputMask id="n8" mask="(99)99999-9999" value="#{pessoaBean.pessoa.telefone}" />
+				<p:message for="n8" />
+				
+<!-- 				<p:outputLabel for="n9" value="Horario Entrada:" /> -->
+<!-- 				<p:inputText id="n9" value="#{pessoaBean.pessoa.horarioEntrada}" /> -->
+<!-- 				<p:message for="n9" /> -->
+
+			</h:panelGrid>
+		</ui:define>
+	</ui:composition>
+</html>

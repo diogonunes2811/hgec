@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/recursos/template/template.xhtml">
+	<ui:define name="tituloSistema"><a href="index.jsf"><span>Hospital Geral de </span>Curitiba</a></ui:define>
+	<ui:define name="tituloPrincipal">Lista de Pessoas</ui:define>
+	<ui:define name="tituloSecundario">Pessoas cadastradas</ui:define>
+	<ui:define name="botoesAcao"></ui:define>
+	<ui:define name="conteudo">
+
+		<p:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+
+			<p:column headerText="Nome">
+				<h:outputText value="#{pessoa.nome}" />
+			</p:column>
+			
+			<p:column headerText="Nascimento">
+				<h:outputText value="#{pessoa.dataNascimento}" />
+			</p:column>
+			
+			<p:column headerText="Nome do Pai">
+				<h:outputText value="#{pessoa.nomeDoPai}" />
+			</p:column>
+			
+			<p:column headerText="Nome da Mãe">
+				<h:outputText value="#{pessoa.nomeDaMae}" />
+			</p:column>
+			
+			<p:column headerText="Cpf">
+				<h:outputText value="#{pessoa.cpf}" />
+			</p:column>
+			
+			<p:column headerText="Sexo">
+				<h:outputText value="#{pessoa.sexo}" />
+			</p:column>
+			
+			<p:column headerText="Email">
+				<h:outputText value="#{pessoa.email}" />
+			</p:column>
+			
+			<p:column headerText="Telefone">
+				<h:outputText value="#{pessoa.telefone}" />
+			</p:column>
+			
+			<p:column headerText="Horario Entrada">
+				<h:outputText value="#{pessoa.horarioEntrada}" />
+			</p:column>
+			
+			<p:column headerText="Ações">
+				<p:commandButton update="@form" icon="fa fa-trash"
+					action="#{pessoaBean.excluir(pessoa)}" immediate="true" />
+				<p:commandButton update="formEdicao" icon="fa fa-pencil"
+					immediate="true" oncomplete="PF('janelaEditar').show();"
+					action="#{pessoaBean.selecionarPessoa(pessoa)}" />
+			</p:column>
+
+		</p:dataTable>
+
+	</ui:define>
+
+	<ui:define name="janelaModal">
+
+		<h:form id="formEdicao">
+
+			<p:dialog id="editar" widgetVar="janelaEditar"
+				header="Editar Pessoa" modal="true">
+
+				<h:panelGrid columns="3">
+
+					<p:outputLabel for="n0" value="Id:" />
+					<h:outputText id="n0" value="#{pessoaBean.pessoa.id}" />
+					<p:message for="n0" />
+
+					<p:outputLabel for="n1" value="Nome:" />
+					<p:inputText id="n1" value="#{pessoaBean.pessoa.nome}" />
+					<p:message for="n1" />
+					
+					<p:outputLabel for="n2" value="Data de Nascimento:" />
+					<p:inputText id="n2" value="#{pessoaBean.pessoa.dataNascimento}" />
+					<p:message for="n2" />
+					
+					<p:outputLabel for="n3" value="Nome do Pai:" />
+					<p:inputText id="n3" value="#{pessoaBean.pessoa.nomeDoPai}" />
+					<p:message for="n3" />
+					
+					<p:outputLabel for="n4" value="Nome da Mãe:" />
+					<p:inputText id="n4" value="#{pessoaBean.pessoa.nomeDaMae}" />
+					<p:message for="n4" />
+					
+					<p:outputLabel for="n5" value="Cpf:" />
+					<p:inputText id="n5" value="#{pessoaBean.pessoa.cpf}" />
+					<p:message for="n5" />
+					
+					<p:outputLabel for="n6" value="Sexo:" />
+					<p:inputText id="n6" value="#{pessoaBean.pessoa.sexo}" />
+					<p:message for="n6" />
+					
+					<p:outputLabel for="n7" value="Email:" />
+					<p:inputText id="n7" value="#{pessoaBean.pessoa.email}" />
+					<p:message for="n7" />
+					
+					<p:outputLabel for="n8" value="Telefone:" />
+					<p:inputText id="n8" value="#{pessoaBean.pessoa.telefone}" />
+					<p:message for="n8" />
+					
+					<p:outputLabel for="n9" value="Telefone:" />
+					<p:inputText id="n9" value="#{pessoaBean.pessoa.horarioEntrada}" />
+					<p:message for="n9" />
+
+				</h:panelGrid>
+
+				<f:facet name="footer">
+					<p:commandButton value="salvar" update="form"
+						action="#{pessoaBean.editar()}"
+						oncomplete="PF('janelaEditar').hide();" />
+				</f:facet>
+
+			</p:dialog>
+
+
+		</h:form>
+
+	</ui:define>
+	</ui:composition>
+</html>
