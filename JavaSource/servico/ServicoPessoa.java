@@ -20,7 +20,7 @@ public class ServicoPessoa {
 	private EntityManager entityManager;
 
 	public Pessoa cadastrar(Pessoa pessoa) throws Exception {
-		Pessoa existente = this.buscarPessoaPorNome(pessoa.getCpf());
+		Pessoa existente = this.buscarPessoaPorCpf(pessoa.getCpf());
 		if (existente == null) {
 			String dataString;
 			dataString = modificaDataEntrada(pessoa.getHorarioEntrada());
@@ -51,7 +51,7 @@ public class ServicoPessoa {
 	}
 
 	public Pessoa editar(Pessoa pessoa) throws Exception {
-		Pessoa existente = this.buscarPessoaPorNome(pessoa.getNome());
+		Pessoa existente = this.buscarPessoaPorCpf(pessoa.getNome());
 		if (existente == null || existente.equals(pessoa)) {
 			return this.entityManager.merge(pessoa);
 		}else{
@@ -64,7 +64,7 @@ public class ServicoPessoa {
 		return query.getResultList();
 	}
 
-	public Pessoa buscarPessoaPorNome(String cpf) {
+	public Pessoa buscarPessoaPorCpf(String cpf) {
 		Query query = this.entityManager.createQuery("FROM Pessoa p WHERE p.cpf=:p1");
 		query.setParameter("p1", cpf);
 		try {
