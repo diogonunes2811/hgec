@@ -21,26 +21,27 @@ public class Carro implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CARRO_CONTADOR")
 	private Integer id;
 	
+	private String modelo;
+	
 	private String placa;
 	
-	private String motorista;
-	
-	private String categoriaCnh;
-	
-	private String validadeCnh;
-	
-	private String telefone;
-	
-	private String horarioEntrada;
-	
-	private String modeloVeiculo;
+	private String cor;
 
+	
 	public Integer getId() {
 		return id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
 	}
 
 	public String getPlaca() {
@@ -51,52 +52,12 @@ public class Carro implements Serializable{
 		this.placa = placa;
 	}
 
-	public String getMotorista() {
-		return motorista;
+	public String getCor() {
+		return cor;
 	}
 
-	public void setMotorista(String motorista) {
-		this.motorista = motorista;
-	}
-
-	public String getCategoriaCnh() {
-		return categoriaCnh;
-	}
-
-	public void setCategoriaCnh(String categoriaCnh) {
-		this.categoriaCnh = categoriaCnh;
-	}
-
-	public String getValidadeCnh() {
-		return validadeCnh;
-	}
-
-	public void setValidadeCnh(String validadeCnh) {
-		this.validadeCnh = validadeCnh;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
-	public String getHorarioEntrada() {
-		return horarioEntrada;
-	}
-
-	public void setHorarioEntrada(String horarioEntrada) {
-		this.horarioEntrada = horarioEntrada;
-	}
-
-	public String getModeloVeiculo() {
-		return modeloVeiculo;
-	}
-
-	public void setModeloVeiculo(String modeloVeiculo) {
-		this.modeloVeiculo = modeloVeiculo;
+	public void setCor(String cor) {
+		this.cor = cor;
 	}
 
 	@Override
@@ -123,5 +84,4 @@ public class Carro implements Serializable{
 			return false;
 		return true;
 	}
-	
 }

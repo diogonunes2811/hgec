@@ -22,15 +22,15 @@ public class ServicoPessoa {
 	public Pessoa cadastrar(Pessoa pessoa) throws Exception {
 		Pessoa existente = this.buscarPessoaPorCpf(pessoa.getCpf());
 		if (existente == null) {
-			String dataString;
-			dataString = modificaDataEntrada(pessoa.getHorarioEntrada());
-			
-//			//Converte a hora da entrada e string conforme formato ("dd/MM/yyyy hh:mm:ss")
-//			Date horaEntrada = new Date();
-//			SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-//			String dataString = formato.format(horaEntrada);
-			pessoa.setHorarioEntrada(dataString);
-			
+//			String dataString;
+//			dataString = modificaDataEntrada(pessoa.getHorarioEntrada());
+//			
+////			//Converte a hora da entrada e string conforme formato ("dd/MM/yyyy hh:mm:ss")
+////			Date horaEntrada = new Date();
+////			SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+////			String dataString = formato.format(horaEntrada);
+//			pessoa.setHorarioEntrada(dataString);
+//			
 			this.entityManager.persist(pessoa);
 			return pessoa;
 		} else {

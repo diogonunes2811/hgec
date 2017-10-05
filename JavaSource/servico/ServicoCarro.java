@@ -19,14 +19,12 @@ public class ServicoCarro {
 	public Carro cadastrar(Carro carro) throws Exception {
 		Carro existente = this.buscarCarroPorPlaca(carro.getPlaca());
 		if (existente == null) {
-			String dataString;
-			dataString = modificaDataEntrada(carro.getHorarioEntrada());
-			
-//			//Converte a hora da entrada e string conforme formato ("dd/MM/yyyy hh:mm:ss")
-//			Date horaEntrada = new Date();
-//			SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-//			String dataString = formato.format(horaEntrada);
-			carro.setHorarioEntrada(dataString);
+//			String dataString;
+//			dataString = modificaDataEntrada(carro.getHorarioEntrada());
+//			
+////			//Converte a hora da entrada e string conforme formato ("dd/MM/yyyy hh:mm:ss")
+//
+//			carro.setHorarioEntrada(dataString);
 			
 			this.entityManager.persist(carro);
 			return carro;

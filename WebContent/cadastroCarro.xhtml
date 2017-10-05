@@ -17,29 +17,18 @@
 		<ui:define name="conteudo">
 			<h:panelGrid columns="3">
 	
-				<p:outputLabel for="n1" value="Placa:" />
-				<p:inputText id="n1" value="#{carroBean.carro.placa}" />
+				<p:outputLabel for="n1" value="Modelo Veiculo:" />
+				<p:inputText id="n1" value="#{carroBean.carro.modelo}" />
 				<p:message for="n1" />
 				
-				<p:outputLabel for="n2" value="Motorista:" />
-				<p:inputText id="n2" value="#{carroBean.carro.motorista}" />
+				<p:outputLabel for="n2" value="Placa:" />
+				<p:inputText id="n2" value="#{carroBean.carro.placa}" />
 				<p:message for="n2" />
 				
-				<p:outputLabel for="n3" value="Categoria CNH:" />
-				<p:inputText id="n3" value="#{carroBean.carro.categoriaCnh}" />
+				<p:outputLabel for="n3" value="Cor:" />
+				<p:inputText id="n3" value="#{carroBean.carro.cor}" />
 				<p:message for="n3" />
 				
-				<p:outputLabel for="n4" value="Validade CNH:" />
-				<p:inputText id="n4" value="#{carroBean.carro.validadeCnh}" />
-				<p:message for="n4" />
-				
-				<p:outputLabel for="n5" value="Telefone:" />
-				<p:inputMask id="n5" mask="(99)99999-9999" value="#{carroBean.carro.telefone}" />
-				<p:message for="n5" />
-				
-				<p:outputLabel for="n6" value="Modelo Veiculo:" />
-				<p:inputText id="n6" value="#{carroBean.carro.modeloVeiculo}" />
-				<p:message for="n6" />
 				
 			</h:panelGrid>
 		</ui:define>

@@ -14,28 +14,16 @@
 
 		<p:dataTable value="#{carroBean.carros}" var="carro">
 
+			<p:column headerText="Modelo Veiculo">
+				<h:outputText value="#{carro.modelo}" />
+			</p:column>
+			
 			<p:column headerText="Placa">
 				<h:outputText value="#{carro.placa}" />
 			</p:column>
 			
-			<p:column headerText="Motorista">
-				<h:outputText value="#{carro.motorista}" />
-			</p:column>
-			
-			<p:column headerText="Categoria CNH">
-				<h:outputText value="#{carro.categoriaCnh}" />
-			</p:column>
-			
-			<p:column headerText="Validade CNH">
-				<h:outputText value="#{carro.validadeCnh}" />
-			</p:column>
-			
-			<p:column headerText="Telefone">
-				<h:outputText value="#{carro.telefone}" />
-			</p:column>
-			
-			<p:column headerText="Modelo Veiculo">
-				<h:outputText value="#{carro.modeloVeiculo}" />
+			<p:column headerText="Cor">
+				<h:outputText value="#{carro.cor}" />
 			</p:column>
 			
 			<p:column headerText="Ações">
@@ -63,29 +51,17 @@
 					<h:outputText id="n0" value="#{carroBean.carro.id}" />
 					<p:message for="n0" />
 
-					<p:outputLabel for="n1" value="Placa:" />
-					<p:inputText id="n1" value="#{carroBean.carro.placa}" />
+					<p:outputLabel for="n1" value="Modelo Veiculo" />
+					<p:inputText id="n1" value="#{carroBean.carro.modelo}" />
 					<p:message for="n1" />
 					
-					<p:outputLabel for="n2" value="Motorista:" />
-					<p:inputText id="n2" value="#{carroBean.carro.motorista}" />
+					<p:outputLabel for="n2" value="Placa:" />
+					<p:inputText id="n2" value="#{carroBean.carro.placa}" />
 					<p:message for="n2" />
 					
-					<p:outputLabel for="n3" value="Categoria CNH:" />
-					<p:inputText id="n3" value="#{carroBean.carro.categoriaCnh}" />
+					<p:outputLabel for="n3" value="Cor:" />
+					<p:inputText id="n3" value="#{carroBean.carro.cor}" />
 					<p:message for="n3" />
-					
-					<p:outputLabel for="n4" value="Validade CNH:" />
-					<p:inputText id="n4" value="#{carroBean.carro.validadeCnh}" />
-					<p:message for="n4" />
-					
-					<p:outputLabel for="n5" value="Telefone:" />
-					<p:inputText id="n5" value="#{carroBean.carro.telefone}" />
-					<p:message for="n5" />
-					
-					<p:outputLabel for="n6" value="Modelo Veiculo" />
-					<p:inputText id="n6" value="#{carroBean.carro.modeloVeiculo}" />
-					<p:message for="n6" />
 					
 				</h:panelGrid>
 

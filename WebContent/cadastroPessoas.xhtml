@@ -26,36 +26,37 @@
 					value="#{pessoaBean.pessoa.dataNascimento}" />
 				<p:message for="n2" />
 				
-				<p:outputLabel for="n3" value="Nome do Pai:" />
-				<p:inputText id="n3" value="#{pessoaBean.pessoa.nomeDoPai}" />
+				<p:outputLabel for="n3" value="Email:" />
+				<p:inputText id="n3" value="#{pessoaBean.pessoa.email}" />
 				<p:message for="n3" />
 				
-				<p:outputLabel for="n4" value="Nome da Mãe:" />
-				<p:inputText id="n4" value="#{pessoaBean.pessoa.nomeDaMae}" />
+				<p:outputLabel for="n4" value="Telefone:" />
+				<p:inputMask id="n4" mask="(99)99999-9999" value="#{pessoaBean.pessoa.telefone}" />
 				<p:message for="n4" />
 				
 				<p:outputLabel for="n5" value="Cpf:" />
 				<p:inputMask id="n5" mask="999.999.999-99" value="#{pessoaBean.pessoa.cpf}" />
 				<p:message for="n5" />
 				
-				<p:outputLabel for="n6" value="Sexo:" />
-				<p:selectOneRadio id="n6" value="#{pessoaBean.pessoa.sexo}">
+				<p:outputLabel for="n6" value="RG:" />
+				<p:inputMask id="n6" mask="99.999.999-9" value="#{pessoaBean.pessoa.rg}" />
+				<p:message for="n6" />
+				
+				
+				<p:outputLabel for="n7" value="Nome do Pai:" />
+				<p:inputText id="n7" value="#{pessoaBean.pessoa.nomeDoPai}" />
+				<p:message for="n7" />
+				
+				<p:outputLabel for="n8" value="Nome da Mãe:" />
+				<p:inputText id="n8" value="#{pessoaBean.pessoa.nomeDaMae}" />
+				<p:message for="n8" />
+				
+				<p:outputLabel for="n9" value="Sexo:" />
+				<p:selectOneRadio id="n9" value="#{pessoaBean.pessoa.sexo}">
 					<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
 					<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
 				</p:selectOneRadio>
-				<p:message for="n6" />
-				
-				<p:outputLabel for="n7" value="Email:" />
-				<p:inputText id="n7" value="#{pessoaBean.pessoa.email}" />
-				<p:message for="n7" />
-				
-				<p:outputLabel for="n8" value="Telefone:" />
-				<p:inputMask id="n8" mask="(99)99999-9999" value="#{pessoaBean.pessoa.telefone}" />
-				<p:message for="n8" />
-				
-<!-- 				<p:outputLabel for="n9" value="Horario Entrada:" /> -->
-<!-- 				<p:inputText id="n9" value="#{pessoaBean.pessoa.horarioEntrada}" /> -->
-<!-- 				<p:message for="n9" /> -->
+				<p:message for="n9" />
 
 			</h:panelGrid>
 		</ui:define>

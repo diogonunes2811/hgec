@@ -24,30 +24,24 @@ public class Pessoa implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PESSOA_CONTADOR")
 	private Integer id;
 	
-//	@NotBlank(message="Informe o nome completo.")
 	private String nome;
 	
-//	@NotBlank(message="Informe a data de nascimento.")
 	private String dataNascimento;
 	
-//	@NotBlank(message="Informe o nome completo do Pai.")
-	private String nomeDoPai;
+	private String email;
 	
-//	@NotBlank(message="Informe o nome completo da Mãe.")
-	private String nomeDaMae;
+	private String telefone;
 	
 	@CPF
 	private String cpf;
 	
-//	@NotBlank(message="Informe o sexo.")
+	private String rg;
+	
+	private String nomeDoPai;
+	
+	private String nomeDaMae;
+	
 	private char sexo;
-	
-	private String email;
-	
-//	@NotBlank(message="Informe o telefone.")
-	private String telefone;
-	
-	private String horarioEntrada;
 
 	public Integer getId() {
 		return id;
@@ -73,6 +67,38 @@ public class Pessoa implements Serializable{
 		this.dataNascimento = dataNascimento;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getRg() {
+		return rg;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
 	public String getNomeDoPai() {
 		return nomeDoPai;
 	}
@@ -89,44 +115,12 @@ public class Pessoa implements Serializable{
 		this.nomeDaMae = nomeDaMae;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
 	public char getSexo() {
 		return sexo;
 	}
 
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-		
-	public String getHorarioEntrada() {
-		return horarioEntrada;
-	}
-
-	public void setHorarioEntrada(String horaentrada) {
-		this.horarioEntrada = horaentrada;
 	}
 
 	@Override
@@ -153,5 +147,4 @@ public class Pessoa implements Serializable{
 			return false;
 		return true;
 	}
-
 }
