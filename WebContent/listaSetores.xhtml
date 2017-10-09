@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/recursos/template/template.xhtml">
+	<ui:define name="tituloSistema"><a href="index.jsf"><span>Hospital Geral de </span>Curitiba</a></ui:define>
+	<ui:define name="tituloPrincipal">Lista de Setores</ui:define>
+	<ui:define name="tituloSecundario">Setores cadastrados</ui:define>
+	<ui:define name="botoesAcao"></ui:define>
+	<ui:define name="conteudo">
+
+		<p:dataTable value="#{setorBean.setores}" var="setor">
+
+			<p:column headerText="Nome do Setor">
+				<h:outputText value="#{setor.nomeSetor}" />
+			</p:column>
+			
+			<p:column headerText="Ações">
+				<p:commandButton update="@form" icon="fa fa-trash"
+					action="#{setorBean.excluir(setor)}" immediate="true" />
+				<p:commandButton update="formEdicao" icon="fa fa-pencil"
+					immediate="true" oncomplete="PF('janelaEditar').show();"
+					action="#{setorBean.selecionarSetor(setor)}" />
+			</p:column>
+
+		</p:dataTable>
+
+	</ui:define>
+
+	<ui:define name="janelaModal">
+
+		<h:form id="formEdicao">
+
+			<p:dialog id="editar" widgetVar="janelaEditar"
+				header="Editar Setor" modal="true">
+
+				<h:panelGrid columns="3">
+
+					<p:outputLabel for="n0" value="Id:" />
+					<h:outputText id="n0" value="#{setorBean.setor.id}" />
+					<p:message for="n0" />
+
+					<p:outputLabel for="n1" value="Nome Setor" />
+					<p:inputText id="n1" value="#{setorBean.setor.nomeSetor}" />
+					<p:message for="n1" />
+					
+				</h:panelGrid>
+
+				<f:facet name="footer">
+					<p:commandButton value="salvar" update="form"
+						action="#{setorBean.editar()}"
+						oncomplete="PF('janelaEditar').hide();" />
+				</f:facet>
+
+			</p:dialog>
+
+
+		</h:form>
+
+	</ui:define>
+		
+	</ui:composition>
+</html>
