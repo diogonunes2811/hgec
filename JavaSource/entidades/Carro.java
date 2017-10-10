@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Carro implements Serializable{
 
@@ -21,10 +23,13 @@ public class Carro implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CARRO_CONTADOR")
 	private Integer id;
 	
+	@NotBlank(message="Campo modelo veiculo obrigatório.")
 	private String modelo;
 	
+	@NotBlank(message="Campo placa obrigatório.")
 	private String placa;
 	
+	@NotBlank(message="Campo cor do veiculo obrigatório.")
 	private String cor;
 
 	

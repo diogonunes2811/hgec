@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import org.hibernate.validator.constraints.NotBlank;
 //import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -24,12 +25,14 @@ public class Pessoa implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PESSOA_CONTADOR")
 	private Integer id;
 	
+	@NotBlank(message="Campo nome obrigatório.")
 	private String nome;
 	
 	private String dataNascimento;
 	
 	private String email;
 	
+	@NotBlank(message="Campo telefone obrigatório.")
 	private String telefone;
 	
 	@CPF
@@ -37,8 +40,10 @@ public class Pessoa implements Serializable{
 	
 	private String rg;
 	
+	@NotBlank(message="Campo nome do pai obrigatório.")
 	private String nomeDoPai;
 	
+	@NotBlank(message="Campo nome da mãe obrigatório.")
 	private String nomeDaMae;
 	
 	private char sexo;

@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Setor implements Serializable{
 
@@ -21,6 +23,7 @@ public class Setor implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SETOR_CONTADOR")
 	private Integer id;
 	
+	@NotBlank(message="Campo nome obrigatório.")
 	private String nomeSetor;
 
 	public Integer getId() {

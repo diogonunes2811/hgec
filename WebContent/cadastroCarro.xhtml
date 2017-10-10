@@ -22,12 +22,18 @@
 				<p:message for="n1" />
 				
 				<p:outputLabel for="n2" value="Placa:" />
-				<p:inputText id="n2" value="#{carroBean.carro.placa}" />
+				<p:inputMask id="n2" mask="aaa-9999" value="#{carroBean.carro.placa}" />
 				<p:message for="n2" />
 				
 				<p:outputLabel for="n3" value="Cor:" />
 				<p:inputText id="n3" value="#{carroBean.carro.cor}" />
 				<p:message for="n3" />
+				
+<!-- 				<p:outputLabel for="n2" value="Placa:" /> -->
+<!-- 				<p:inputText id="n2" value="#{carroBean.carro.placa}" /> -->
+<!-- 				<p:message for="n2" /> -->
+				
+				
 				
 				
 			</h:panelGrid>
