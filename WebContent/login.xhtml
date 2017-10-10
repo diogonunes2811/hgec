@@ -2,8 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
-	<ui:composition template="">
+	<ui:composition template="/recursos/template/template.xhtml">
+	<ui:define name="tituloSistema"><a href="index.jsf"><span>Hospital Geral de </span>Curitiba</a></ui:define>
+			<ui:define name="tituloPrincipal">Login</ui:define>
+			<ui:define name="tituloSecundario">Insira o usuário e Senha.</ui:define>
+			<ui:define name="botoesAcao">
+				<p:commandButton value="Login" action="#{loginBean.enviaLogin()}"
+					update="@form" icon="fa fa-lock" />
+		</ui:define>
+		
+		<ui:define name="conteudo">
+			<h:panelGrid columns="3">
+	
+				<p:outputLabel for="n1" value="Login:" />
+				<p:inputMask id="n1" mask="999.999.999-99" value="#{loginBean.militar.cpf}" />
+				<p:message for="n1" />
+				
+				<p:outputLabel for="n2" value="Senha:" />
+				<p:password id="n2" type="pa" value="#{loginBean.militar.password}" />
+				<p:message for="n2" />
+				
+			</h:panelGrid>
+		</ui:define>
 	</ui:composition>
 </html>

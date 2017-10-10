@@ -20,6 +20,8 @@ public class Militar extends Pessoa {
 	
 	@NotBlank(message="Campo identidade militar obrigatório.")
 	private String idtMilitar;
+	
+	private String password;
 
 	public String getNomeDeGuerra() {
 		return nomeDeGuerra;
@@ -44,5 +46,13 @@ public class Militar extends Pessoa {
 	public void setIdtMilitar(String idtMilitar) {
 		this.idtMilitar = idtMilitar;
 	}
-	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }

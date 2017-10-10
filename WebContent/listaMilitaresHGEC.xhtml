@@ -62,6 +62,10 @@
 				<h:outputText value="#{militar.idtMilitar}" />
 			</p:column>
 			
+			<p:column headerText="Senha">
+				<h:outputText value="#{militar.password}" />
+			</p:column>
+			
 			<p:column headerText="Ações">
 				<p:commandButton update="@form" icon="fa fa-trash"
 					action="#{militarBean.excluir(militar)}" immediate="true" />
@@ -134,6 +138,10 @@
 					<p:outputLabel for="n12" value="IdtMilitar:" />
 					<p:inputText id="n12" value="#{militarBean.militar.idtMilitar}" />
 					<p:message for="n12" />
+					
+					<p:outputLabel for="n13" value="Senha:" />
+					<p:password id="n13" value="#{militarBean.militar.password}" />
+					<p:message for="n13" />
 
 				</h:panelGrid>
 

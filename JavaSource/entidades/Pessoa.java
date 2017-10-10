@@ -40,7 +40,6 @@ public class Pessoa implements Serializable{
 	
 	private String rg;
 	
-	@NotBlank(message="Campo nome do pai obrigatório.")
 	private String nomeDoPai;
 	
 	@NotBlank(message="Campo nome da mãe obrigatório.")
