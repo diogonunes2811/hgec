@@ -1,4 +1,4 @@
-package servico;
+package br.hgec.eb.ces.servico;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,7 +10,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import entidades.Pessoa;
+import br.hgec.eb.ces.entidades.Pessoa;
 
 
 @Stateless

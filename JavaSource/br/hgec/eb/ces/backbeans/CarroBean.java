@@ -1,4 +1,4 @@
-package backbeans;
+package br.hgec.eb.ces.backbeans;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
-import entidades.Carro;
-import servico.ServicoCarro;
+import br.hgec.eb.ces.entidades.Carro;
+import br.hgec.eb.ces.servico.ServicoCarro;
 
 @Named
 @ViewScoped

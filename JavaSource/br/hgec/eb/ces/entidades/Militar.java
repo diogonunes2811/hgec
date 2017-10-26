@@ -1,4 +1,4 @@
-package entidades;
+package br.hgec.eb.ces.entidades;
 
 import javax.persistence.Entity;
 

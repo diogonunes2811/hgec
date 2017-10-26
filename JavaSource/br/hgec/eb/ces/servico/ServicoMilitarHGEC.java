@@ -1,4 +1,4 @@
-package servico;
+package br.hgec.eb.ces.servico;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import entidades.Militar;
+import br.hgec.eb.ces.entidades.Militar;
 
 @Stateless
 public class ServicoMilitarHGEC {

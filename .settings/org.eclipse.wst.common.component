@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="hgec">
+    <wb-module deploy-name="hgec.eb.mil.br.ces">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/JavaSource"/>
-        <property name="context-root" value="hgec"/>
-        <property name="java-output-path" value="/hgec/WebContent/WEB-INF/classes"/>
+        <property name="java-output-path" value="/hgec.eb.mil.br.ces/WebContent/WEB-INF/classes"/>
+        <property name="context-root" value="hgec.eb.mil.br.ces"/>
     </wb-module>
 </project-modules>

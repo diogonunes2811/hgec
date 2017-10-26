@@ -1,4 +1,4 @@
-package backbeans;
+package br.hgec.eb.ces.backbeans;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
-import entidades.Militar;
-import servico.ServicoLogin;
+import br.hgec.eb.ces.entidades.Militar;
+import br.hgec.eb.ces.servico.ServicoLogin;
 
 @Named
 @ViewScoped
